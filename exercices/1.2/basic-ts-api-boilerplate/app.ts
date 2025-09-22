@@ -10,12 +10,24 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 let getCounter = 0;
+let postCounter = 0;
+let deleteCounter = 0;
+let putPatchCounter = 0
 
 app.use((req, _res, next) => {
     if(req.method === "GET"){
         getCounter++;
     }
-    console.log("GET counter: " + getCounter);
+    if(req.method === "POST"){
+        postCounter++;
+    }
+    if(req.method === "PUT" || req.method === "PATCH"){
+        putPatchCounter++;
+    }
+    if(req.method === "DELETE"){
+        deleteCounter++;
+    }
+    console.log("GET counter: " + getCounter+ "\nPOST counter "+postCounter+"\nPUT/PATCH counter "+putPatchCounter+"\nDELETE counter "+ deleteCounter);
     next();
 });
 
