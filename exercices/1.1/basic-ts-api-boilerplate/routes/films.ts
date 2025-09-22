@@ -1,6 +1,8 @@
 import {Router } from "express";
 import { Film } from "../types";
 
+const router = Router();
+
 const films: Film[] = [
     {
         id:1,
@@ -24,6 +26,9 @@ const films: Film[] = [
     },
 ];
 
-const router = Router();
 
-router.get("/",)
+router.get("/", (_req, res) => {
+    return res.json(films);
+});
+
+export default router;
