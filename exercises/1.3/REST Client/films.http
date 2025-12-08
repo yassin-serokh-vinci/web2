@@ -1,0 +1,23 @@
+@baseUrl = http://localhost:3000
+
+### Read all films (sans filtre)
+GET {{baseUrl}}/films
+
+### Read all films with minimum duration = 150
+GET {{baseUrl}}/films?minimum-duration=150
+
+### Read a single film (id = 2)
+GET {{baseUrl}}/films/2
+
+### Create a new film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+  "title": "Dune",
+  "director": "Denis Villeneuve",
+  "duration": 155,
+  "budget": 165,
+  "description": "Paul Atreides se rend sur la planète Arrakis.",
+  "imageUrl": "https://example.com/dune.jpg"
+}
