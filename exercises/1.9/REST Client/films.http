@@ -1,0 +1,90 @@
+@baseUrl = http://localhost:3000
+
+### Read all films (sans filtre)
+GET {{baseUrl}}/films
+
+### Read all films with minimum duration = 150
+GET {{baseUrl}}/films?minimum-duration=150
+
+###
+GET {{baseUrl}}/films?title-start=I
+
+###
+GET {{baseUrl}}/films?order=asc 
+
+###
+GET {{baseUrl}}/films?order=desc 
+
+###
+GET {{baseUrl}}/films?minimum-duration=120&title-start=I&order=asc
+
+### Read a single film (id = 2)
+GET {{baseUrl}}/films/2
+
+### Create a new film
+POST {{baseUrl}}/films
+Content-Type: application/json
+
+{
+  "title": "Pomme",
+  "director": "Yassin Serokh",
+  "duration": 155,
+  "budget": 165,
+  "description": "Plant Rap de Landy",
+  "imageUrl": "https://example.com/yassin.jpg"
+}
+
+### Invalid film (negative duration)
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+  "title": "Bad Film",
+  "director": "Nobody",
+  "duration": -10
+}
+
+### Duplicate film
+POST http://localhost:3000/films
+Content-Type: application/json
+
+{
+  "title": "Dune",
+  "director": "Denis Villeneuve",
+  "duration": 155
+}
+
+### Delete a film
+DELETE {{baseUrl}}/films/10
+
+### Patch a film (update title)
+PATCH {{baseUrl}}/films/1
+Content-Type: application/json
+
+{
+  "title": "Inception (but no)"
+}
+
+### Put a film (update full resource)
+PUT {{baseUrl}}/films/3
+Content-Type: application/json
+
+{
+  "title": "Interstellar (Updated YASSIN)",
+  "director": "Christopher Nolan",
+  "duration": 170,
+  "budget": 170,
+  "description": "Version mise à jour",
+  "imageUrl": "https://example.com/interstellar-updated.jpg"
+}
+
+### Put a film that does not exist yet (create)
+PUT {{baseUrl}}/films/10
+Content-Type: application/json
+
+{
+  "title": "New Film",
+  "director": "New Director",
+  "duration": 120
+}
+
