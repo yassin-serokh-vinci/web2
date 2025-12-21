@@ -1,6 +1,6 @@
-import './App.css'
+import "./App.css";
 
-interface Movie { 
+interface Movie {
   title: string;
   director: string;
 }
@@ -9,7 +9,7 @@ interface PageTitleProps {
   title: string;
 }
 
-interface CinemaProps{
+interface CinemaProps {
   name: string;
   movie1: Movie;
   movie2: Movie;
@@ -43,25 +43,17 @@ const App = () => {
     <div>
       <PageTitle title={pageTitle} />
 
-      <Cinema
-        name={cinema1Name}
-        movie1={movie1}
-        movie2={movie2}
-      />
+      <Cinema name={cinema1Name} movie1={movie1} movie2={movie2} />
 
-      <Cinema
-        name={cinema2Name}
-        movie1={movie3}
-        movie2={movie4}
-      />
+      <Cinema name={cinema2Name} movie1={movie3} movie2={movie4} />
     </div>
   );
 };
 
 const PageTitle = (props: PageTitleProps) => <h1>{props.title}</h1>;
 const Cinema = (props: CinemaProps) => {
-    return (
-      <div>
+  return (
+    <div>
       <h2>{props.name}</h2>
       <ul>
         <li>
@@ -73,8 +65,8 @@ const Cinema = (props: CinemaProps) => {
           {props.movie2.director}
         </li>
       </ul>
-      </div>
-    )
-  };
-  
+    </div>
+  );
+};
+
 export default App;
