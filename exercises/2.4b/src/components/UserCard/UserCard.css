@@ -1,0 +1,22 @@
+
+.user-card {
+    border: 1px solid #000;
+    padding: 12px;
+    margin: 12px 0;
+    max-width: 350px;
+}
+
+.user-card__name {
+  margin: 0 0 8px 0;
+  font-size: 24px;
+}
+
+.online {
+    color: green;
+    font-weight: bold;
+}
+
+.offline{
+    color: red;
+    font-weight: bold;
+}
