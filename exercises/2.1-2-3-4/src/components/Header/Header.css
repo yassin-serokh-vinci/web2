@@ -1,0 +1,15 @@
+.app-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+}
+
+.app-header__logo {
+  height: 50px;
+}
+
+.app-header__content {
+  text-align: center;
+}
