@@ -1,16 +1,21 @@
 import { useState } from "react";
 
-const ClickCounter = () => {
+interface ClickCounterProps {
+  title: string;
+  messageAfter10: string;
+}
+
+const ClickCounter = ({title, messageAfter10}: ClickCounterProps) => {
     const [count, setCount] = useState(0);
 
     return (
         <div className="card">
-            <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-            </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+          <h2>{title}</h2>
+          <button onClick={() => setCount((count) => count + 1)}>
+            count is {count}
+          </button>
+          
+          {count >=10 && <p>{messageAfter10}</p>}
         </div>
     )
 }
