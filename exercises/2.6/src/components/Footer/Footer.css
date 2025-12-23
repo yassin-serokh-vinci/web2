@@ -1,0 +1,16 @@
+.app-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 16px;
+  margin-top: 24px;
+}
+
+.app-footer__logo {
+  height: 50px;
+}
+
+.app-footer__content {
+  text-align: center;
+}
