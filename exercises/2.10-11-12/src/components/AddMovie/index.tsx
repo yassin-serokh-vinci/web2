@@ -1,12 +1,13 @@
 import { useState } from "react";
 import type { SyntheticEvent } from "react";
 import type { Movie } from "../../type";
+import "./AddMovie.css";
 
 interface AddMovieProps {
-    addMovie: (movie: Movie ) => void;
+    onAddMovie: (movie: Movie ) => void;
 }
 
-const AddMovie = ({addMovie}: AddMovieProps) => {
+const AddMovie = ({onAddMovie}: AddMovieProps) => {
     const [title, setTitle] = useState("");
     const [director, setDirector]= useState("");
     const [duration, setDuration]= useState(0);
@@ -17,7 +18,7 @@ const AddMovie = ({addMovie}: AddMovieProps) => {
 
     const handleSubmit = (e: SyntheticEvent) => {
         e.preventDefault();
-        addMovie({title, director, duration, imageUrl, description, budget});
+        onAddMovie({title, director, duration, imageUrl, description, budget});
         setTitle("");
         setDirector("");
         setDuration(0);
