@@ -1,6 +1,6 @@
-.app-footer {
+.footer{
     background-color: #333;
-    color: white;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 10px;
     position: fixed;
@@ -9,13 +9,9 @@
     z-index: 100;
 
     display: flex;
-    justify-content:space-evenly;
+    justify-content:space-evenly
 }
 
-.app-footer__logo {
-  height: 50px;
-}
-
-.app-footer__content {
-  text-align: center;
+.logo{
+    height: 50px;
 }
