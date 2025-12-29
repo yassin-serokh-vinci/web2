@@ -9,7 +9,7 @@ const MovieListPage = () => {
   return (
     <div>
       <PageTitle title="My favorite movies" />
-
+      
       <MovieListView movies={movies} />
 
       <br />
